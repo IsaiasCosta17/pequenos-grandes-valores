@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ele não é malcriado — faltam as ferramentas | Sara Ginga</title>
+<meta name="description" content="Veja o vídeo: porque é que o seu filho bate, e o que fazer a partir de amanhã.">
+<meta property="og:title" content="Ele não é malcriado — faltam as ferramentas">
+<meta property="og:image" content="media/poster-bondade.jpg">
+<script>
+// stub do pixel: as chamadas ficam em fila e so disparam quando o fbevents.js chegar
+!function(f,b,e,v,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);
+fbq('init','1673794047709205');
+fbq('track','PageView');
+fbq('track','ViewContent',{content_name:'Colecao 4 livros BR',
+  content_ids:['colecao-4-br'],content_type:'product',value:29.90,currency:'BRL'});
+
+// o ficheiro de 96 KB da Meta so entra depois de a pagina estar pronta,
+// ou mal a pessoa toque/role - o que vier primeiro. Nenhum evento se perde.
+(function(){
+  var carregado=false;
+  function carregar(){
+    if(carregado)return; carregado=true;
+    var t=document.createElement('script'); t.async=true;
+    t.src='https://connect.facebook.net/en_US/fbevents.js';
+    document.head.appendChild(t);
+  }
+  ['touchstart','scroll','click','keydown'].forEach(function(ev){
+    addEventListener(ev,carregar,{once:true,passive:true});
+  });
+  if('requestIdleCallback'in window) requestIdleCallback(carregar,{timeout:3500});
+  else setTimeout(carregar,2500);
+})();
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1673794047709205&ev=PageView&noscript=1"></noscript>
+<style>
+:root{--bg:#fff8ea;--ink:#16366b;--soft:#5b6980;--coral:#e0558c;--coral-dk:#b23c6e;
+  --line:#e6dcc6;--card:#fff;--teal:#2e7f68;--navy:#16366b;--amarelo:#f4b93a}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);
+  font:400 17px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+img,video{max-width:100%;display:block}
+.w{width:100%;max-width:720px;margin:0 auto;padding:0 18px}
+
+/* ---- palco do video ---- */
+.stage{padding:26px 0 34px;text-align:center}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  color:var(--coral-dk);margin-bottom:14px}
+h1{font-size:clamp(25px,5.6vw,38px);line-height:1.18;font-weight:800;
+  letter-spacing:-.02em;margin-bottom:10px}
+h1 em{font-style:normal;color:var(--coral)}
+.deck{font-size:17px;color:var(--soft);margin:0 auto 20px;max-width:560px}
+
+.player{position:relative;border-radius:14px;overflow:hidden;background:#000;
+  max-width:380px;margin:0 auto;
+  box-shadow:0 14px 40px rgba(30,46,70,.22)}
+.player video{width:100%;aspect-ratio:9/16;background:#000;display:block}
+.cover{position:absolute;inset:0;cursor:pointer;border:0;padding:0;width:100%;
+  background:url(media/poster-bondade.jpg) center/cover no-repeat}
+.cover::after{content:"";position:absolute;inset:0;background:rgba(10,14,22,.34)}
+.play{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);
+  width:84px;height:84px;border-radius:50%;background:var(--coral);z-index:2;
+  display:grid;place-items:center;box-shadow:0 8px 26px rgba(0,0,0,.4);
+  animation:beat 2.1s ease-in-out infinite}
+.play::before{content:"";border-left:26px solid #fff;border-top:16px solid transparent;
+  border-bottom:16px solid transparent;margin-left:7px}
+@keyframes beat{0%,100%{transform:translate(-50%,-50%) scale(1)}
+  50%{transform:translate(-50%,-50%) scale(1.07)}}
+.covertxt{position:absolute;left:0;right:0;bottom:16px;z-index:2;color:#fff;
+  font-size:14.5px;font-weight:600;text-shadow:0 2px 8px rgba(0,0,0,.7)}
+.sound{font-size:13.5px;color:var(--soft);margin-top:10px}
+
+/* ---- CTA revelado ---- */
+.gate{margin-top:26px}
+.wait{color:var(--soft);font-size:14.5px;padding:14px 0}
+.wait b{color:var(--ink)}
+.reveal{display:none;animation:up .45s ease both}
+.reveal.on{display:block}
+@keyframes up{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+.price{font-size:15px;color:var(--soft);margin-bottom:12px}
+.price b{font-size:34px;color:var(--ink);font-weight:800;display:block;line-height:1.1}
+.cta{display:block;background:var(--coral);color:#fff;text-decoration:none;
+  font-size:20px;font-weight:800;padding:19px 22px;border-radius:12px;
+  box-shadow:0 6px 0 var(--coral-dk);transition:transform .1s,box-shadow .1s}
+.cta:active{transform:translateY(4px);box-shadow:0 2px 0 var(--coral-dk)}
+.cta small{display:block;font-size:13px;font-weight:600;opacity:.93;margin-top:4px}
+.under{font-size:13.5px;color:var(--soft);margin-top:11px}
+
+.oferta{text-align:center}
+.oferta .tag{display:inline-block;background:var(--ink);color:#fff;font-size:12px;font-weight:800;
+  letter-spacing:.06em;padding:5px 11px;border-radius:999px;margin-bottom:8px}
+.price s{display:block;font-size:17px;color:var(--soft);margin-top:4px}
+.colecao{display:grid;gap:12px;margin-bottom:16px}
+.livro{display:flex;gap:13px;align-items:center;background:var(--card);border:1px solid var(--line);
+  border-radius:14px;padding:10px 12px}
+.livro img{width:96px;height:auto;flex:0 0 96px;border-radius:6px}
+.livro b{display:block;font-size:15px;line-height:1.3}
+.livro span{display:block;font-size:13.5px;color:var(--soft);margin-top:4px}
+.livro em{display:inline-block;font-style:normal;font-size:13px;color:var(--soft);
+  text-decoration:line-through;margin-top:5px}
+.soma{text-align:center;font-size:15.5px;background:#fff3d6;border:1px dashed var(--coral);
+  border-radius:12px;padding:12px}
+.soma s{color:var(--soft)}
+.soma b{color:var(--coral-dk);font-size:19px}
+.pack{width:100%;max-width:560px;margin:4px auto 10px;height:auto}
+.dor{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;margin:6px 0 26px}
+.dor h2{margin-bottom:10px}
+.dor ul{list-style:none;margin:0 0 12px}
+.dor li{position:relative;padding:6px 0 6px 30px;font-size:15.5px;border-bottom:1px dashed var(--line)}
+.dor li::before{content:"✕";position:absolute;left:4px;top:6px;color:var(--coral);font-weight:800}
+.dor p{font-size:15.5px;color:var(--soft)}
+.dor p b{color:var(--ink)}
+.fecho{text-align:center;margin:18px 0 26px}
+.fecho.final{background:var(--card);border:2px solid var(--coral);border-radius:16px;padding:20px 16px;margin-top:26px}
+.ultimo{font-size:17px;font-weight:700;margin-bottom:14px}
+.garantia{display:flex;gap:14px;align-items:center;background:#eaf6f1;border:1px solid #bfe0d3;
+  border-radius:14px;padding:16px;margin:22px 0}
+.selo{flex:0 0 66px;height:66px;border-radius:50%;background:var(--teal);color:#fff;
+  font-size:28px;font-weight:800;display:grid;place-items:center;line-height:.9;text-align:center}
+.selo small{display:block;font-size:11px;font-weight:700}
+.garantia b{font-size:17px}
+.garantia p{font-size:14.5px;color:var(--soft);margin-top:3px}
+.faqh{margin-top:26px}
+.barra{position:fixed;left:0;right:0;bottom:0;z-index:20;display:none;align-items:center;
+  justify-content:space-between;gap:10px;background:var(--navy);color:#fff;text-decoration:none;
+  padding:11px 16px calc(11px + env(safe-area-inset-bottom));box-shadow:0 -6px 20px rgba(0,0,0,.18)}
+.barra.on{display:flex}
+.barra s{opacity:.7;font-size:13px}
+.barra b{font-size:17px}
+.barra em{font-style:normal;background:var(--coral);font-weight:800;padding:9px 16px;border-radius:9px}
+body{padding-bottom:64px}
+.heroGrid{display:grid;grid-template-columns:minmax(0,46%) 1fr;gap:14px;align-items:center;
+  max-width:560px;margin:0 auto;text-align:center}
+.heroGrid .player{border-radius:12px}
+.heroGrid .gate{margin-top:0}
+.heroGrid .pack{margin:0 auto 6px;max-width:100%}
+.heroGrid .oferta .tag{font-size:10.5px;padding:4px 9px;margin-bottom:4px}
+.heroGrid .price{font-size:13px;margin-bottom:8px;line-height:1.3}
+.heroGrid .price s{font-size:14px;margin-top:2px}
+.heroGrid .price b{font-size:30px}
+.heroGrid .cta{font-size:16px;padding:14px 10px}
+.heroGrid .cta small{font-size:11.5px}
+.heroGrid .under{font-size:11.5px;margin-top:8px;line-height:1.35}
+.heroGrid .covertxt{font-size:12px;bottom:10px;padding:0 6px}
+.heroGrid .play{width:58px;height:58px}
+.heroGrid .play::before{border-left-width:18px;border-top-width:11px;border-bottom-width:11px;margin-left:5px}
+.heroGrid .sound{font-size:12px;margin-top:6px}
+@media(max-width:560px){
+  .stage h1{font-size:23px}
+  .stage .deck{font-size:15px;margin-bottom:14px}
+  .brand{padding-top:10px}
+}
+@media(max-width:560px) and (max-height:760px){
+  .brand{padding:6px 0 0}
+  .brand img{width:32px;height:32px}
+  .stage{padding:8px 0 20px}
+  .kicker{font-size:11.5px;margin-bottom:6px}
+  .stage h1{font-size:21px;margin-bottom:6px}
+  .stage .deck{font-size:14px;line-height:1.45;margin-bottom:10px}
+  .heroGrid .pack{margin-bottom:2px}
+  .heroGrid .price b{font-size:27px}
+  .heroGrid .cta{padding:12px 8px}
+}
+.vital{display:inline-block;background:#e7f6ef;color:#1d6b54;border:2px solid #2e7f68;font-weight:800;
+  font-size:13px;letter-spacing:.04em;padding:5px 12px;border-radius:999px;margin:0 0 10px}
+.heroGrid .vital{font-size:10.5px;padding:3px 8px;margin-bottom:6px}
+/* ---- rodape curto ---- */
+.mini{border-top:1px solid var(--line);padding:26px 0 10px;text-align:left}
+.mini h2{font-size:17px;font-weight:800;margin-bottom:12px;text-align:center}
+.rows{display:grid;gap:7px;margin-bottom:20px}
+.row{display:flex;gap:11px;align-items:flex-start;background:var(--card);
+  border:1px solid var(--line);border-radius:10px;padding:11px 13px;font-size:15.5px}
+.row i{flex:0 0 18px;height:18px;border-radius:5px;background:var(--teal);
+  position:relative;margin-top:3px}
+.row i::after{content:"";position:absolute;left:5px;top:5px;width:7px;height:4px;
+  border-left:2.4px solid #fff;border-bottom:2.4px solid #fff;transform:rotate(-45deg)}
+/* ---- depoimentos de maes ---- */
+.vozes{margin:24px 0 4px}
+.vozes h3{font-size:17px;font-weight:800;text-align:center;margin-bottom:5px}
+.vozes .nota{font-size:13.5px;color:var(--soft);text-align:center;margin-bottom:14px}
+.voz{background:var(--card);border:1px solid var(--line);border-radius:13px;
+  padding:15px 16px;margin-bottom:11px}
+.voz .quem{display:flex;align-items:center;gap:11px;margin-bottom:10px}
+.voz img{width:54px;height:54px;flex:0 0 54px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--amarelo);background:#f1ece0}
+.voz b{display:block;font-size:15.5px;color:var(--navy);line-height:1.3}
+.voz .quem span{font-size:12.5px;color:var(--soft)}
+.voz p{font-size:15px;color:var(--soft);font-style:italic}
+.voz p::before{content:"\201C"}
+.voz p::after{content:"\201D"}
+
+/* segundo botao, logo a seguir aos depoimentos */
+.fecho{text-align:center;margin:22px 0 6px}
+
+/* estante de livros recomendados */
+.estante{margin:26px 0 8px}
+.estante h3{font-size:17px;font-weight:800;margin-bottom:6px;text-align:center}
+.estante .nota{font-size:14.5px;color:var(--soft);text-align:center;margin-bottom:14px}
+.prateleira{display:flex;gap:11px;overflow-x:auto;padding:2px 2px 12px;
+  scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch}
+.prateleira::-webkit-scrollbar{height:5px}
+.prateleira::-webkit-scrollbar-thumb{background:var(--line);border-radius:3px}
+.liv{flex:0 0 112px;scroll-snap-align:start;text-align:center}
+.liv img{width:112px;height:150px;object-fit:contain;border-radius:8px;background:#f8f5ee;
+  border:1px solid var(--line);box-shadow:0 3px 10px rgba(22,54,107,.12)}
+.liv b{display:block;font-size:12.5px;font-weight:700;margin-top:7px;line-height:1.25}
+.liv span{display:block;font-size:11.5px;color:var(--soft);margin-top:2px}
+details{border-bottom:1px solid var(--line);padding:13px 2px}
+summary{font-weight:700;cursor:pointer;list-style:none;font-size:16px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";float:right;color:var(--coral);font-weight:800;font-size:20px;line-height:1}
+details[open] summary::after{content:"\2212"}
+details p{margin-top:9px;font-size:15.5px;color:var(--soft)}
+
+/* ---- marca no topo ---- */
+.brand{display:flex;align-items:center;justify-content:center;gap:10px;
+  padding:14px 0 2px;text-align:center}
+.brand img{width:40px;height:40px;border-radius:50%;object-fit:cover;
+  border:2px solid var(--amarelo)}
+.brand b{font-size:16px;font-weight:800;color:var(--navy);letter-spacing:-.01em}
+.brand span{display:block;font-size:11.5px;font-weight:600;color:var(--soft);
+  letter-spacing:.03em;text-transform:uppercase}
+
+/* ---- bloco da autora ---- */
+.autora{background:var(--card);border:1px solid var(--line);border-radius:13px;
+  padding:18px;margin:22px 0 4px;text-align:left}
+.autora .top{display:flex;align-items:center;gap:14px;margin-bottom:12px}
+.autora img{width:76px;height:76px;border-radius:50%;object-fit:cover;flex:0 0 76px;
+  border:3px solid var(--amarelo)}
+.autora .top b{display:block;font-size:18px;color:var(--navy)}
+.autora .top span{font-size:13.5px;color:var(--soft)}
+.autora p{font-size:15px;color:var(--soft);margin-bottom:10px}
+.fb{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;
+  color:var(--navy);text-decoration:none;border:1px solid var(--line);
+  border-radius:8px;padding:8px 13px;background:var(--bg)}
+.fb::before{content:"f";display:grid;place-items:center;width:18px;height:18px;
+  border-radius:4px;background:#1877f2;color:#fff;font-weight:800;font-size:13px}
+
+footer{padding:24px 0 40px;font-size:12.5px;color:var(--soft);text-align:center}
+
+@media(max-width:560px){
+  .stage{padding:18px 0 28px}
+  .play{width:70px;height:70px}
+  .play::before{border-left-width:22px;border-top-width:13px;border-bottom-width:13px}
+}
+</style>
+</head>
+<body>
+
+<div class="brand">
+  <img src="media/sara-40.webp" alt="Sara Ginga" width="40" height="40">
+  <div><b>Sara Ginga</b><span>Manual para pais e educadores</span></div>
+</div>
+
+<section class="stage">
+  <div class="w">
+    <p class="kicker">Pais de crianças de 2 a 6 anos</p>
+    <h1>Seu filho não é malcriado.<br><em>Ele está repetindo o que aprendeu.</em></h1>
+    <p class="deck">Bate, faz birra com o «não», não divide? A Sara Ginga explica em 3 minutos
+      por que isso acontece — e o que você pode fazer em casa, 15 minutos por dia.</p>
+
+    <div class="heroGrid">
+      <div class="colV">
+    <div class="player" id="player">
+      <video id="v" playsinline preload="metadata" poster="media/poster-bondade.jpg">
+        <source src="media/vsl-bondade-br-bf2.mp4" type="video/mp4">
+      </video>
+      <button class="cover" id="cover" aria-label="Reproduzir o vídeo">
+        <span class="play"></span>
+        <span class="covertxt">Toque para ver · 3 min · com som</span>
+      </button>
+    </div>
+    <p class="sound" id="sound">Ligue o som do celular</p>
+
+      </div>
+    <div class="gate">
+      <div class="reveal" id="reveal">
+        <img class="pack" src="media/colecao/pack-4-livros-br.webp" alt="Os 4 livros da coleção Pequenos Grandes Valores" width="1180" height="560">
+        <div class="oferta">
+          <span class="tag">BLACK FRIDAY · ATÉ 30/11</span>
+          <p class="price">Coleção completa · 4 livros em PDF
+            <s>R$ 97,60</s><b>R$ 29,90</b></p>
+          <span class="vital">∞ ACESSO VITALÍCIO</span>
+        </div>
+        <a class="cta" href="https://pay.cakto.com.br/gpvud7e_1335282">
+          QUERO OS 4 LIVROS
+          <small>∞ Acesso vitalício · chega na hora no seu e-mail</small>
+        </a>
+        <p class="under">Pix ou cartão · garantia de 7 dias</p>
+      </div>
+    </div>
+    </div>
+  </div>
+</section>
+
+<section class="mini" id="mini" hidden>
+  <div class="w">
+
+    <div class="dor">
+      <h2>Isso acontece na sua casa?</h2>
+      <ul>
+        <li>Bate nos colegas ou nos irmãos quando fica bravo</li>
+        <li>Faz birra toda vez que ouve um «não»</li>
+        <li>Não quer dividir nem esperar a vez</li>
+        <li>Grita, chora e não sabe dizer o que sente</li>
+      </ul>
+      <p>Não é falta de educação nem «gênio ruim». A criança ainda não tem as ferramentas.
+        Estes 4 livros dão essas ferramentas — <b>com brincadeiras, não com castigos</b>.</p>
+    </div>
+
+    <h2>O que recebe hoje: 4 livros</h2>
+    <div class="colecao">
+      <div class="livro"><img data-src="media/colecao/livro1-br.webp" alt="Meu Manual da Bondade" width="300" height="375" loading="lazy">
+        <div><b>Livro 1 · Meu Manual da Bondade</b>
+        <span>61 páginas coloridas · 50 brincadeiras, uma por dia · plano de 30 dias</span><em>R$ 37,00</em></div></div>
+      <div class="livro"><img data-src="media/colecao/livro2.webp" alt="Inteligência Emocional Infantil" width="300" height="375" loading="lazy">
+        <div><b>Livro 2 · Inteligência Emocional Infantil</b>
+        <span>30 atividades · roda das emoções, termômetro da raiva, respiração para acalmar</span><em>R$ 19,90</em></div></div>
+      <div class="livro"><img data-src="media/colecao/livro3.webp" alt="Aprender a Partilhar e Respeitar" width="300" height="375" loading="lazy">
+        <div><b>Livro 3 · Aprender a Partilhar e Respeitar</b>
+        <span>25 atividades · cartão «agora é a sua vez», jogo de tabuleiro, quadro de 7 dias</span><em>R$ 19,90</em></div></div>
+      <div class="livro"><img data-src="media/colecao/livro4.webp" alt="Boas Maneiras Desde Pequeno" width="300" height="375" loading="lazy">
+        <div><b>Livro 4 · Boas Maneiras Desde Pequeno</b>
+        <span>40 hábitos · cartaz das palavras mágicas, regras da mesa, tabela de 14 dias</span><em>R$ 19,90</em></div></div>
+      <div class="soma">Valor total <s>R$ 97,60</s> · Na Black Friday só <b>R$ 29,90</b></div>
+    </div>
+    <div class="rows">
+      <div class="row"><i></i><span><b>Folhas para imprimir</b> em casa ou na papelaria: cartões, jogos, tabelas e diplomas</span></div>
+      <div class="row"><i></i><span><b>10 a 15 minutos por dia</b>, com materiais que já tem em casa</span></div>
+      <div class="row"><i></i><span>Feito para <b>crianças de 2 a 6 anos</b>, com brincadeiras simples</span></div>
+    </div>
+
+
+    <div class="fecho">
+      <div class="oferta">
+          <span class="tag">BLACK FRIDAY · ATÉ 30/11</span>
+          <p class="price">Coleção completa · 4 livros em PDF
+            <s>R$ 97,60</s><b>R$ 29,90</b></p>
+          <span class="vital">∞ ACESSO VITALÍCIO</span>
+        </div>
+        <a class="cta" href="https://pay.cakto.com.br/gpvud7e_1335282">
+          QUERO OS 4 LIVROS
+          <small>∞ Acesso vitalício · chega na hora no seu e-mail</small>
+        </a>
+        <p class="under">Pix ou cartão · garantia de 7 dias</p>
+    </div>
+
+    <div class="vozes">
+      <h3>Mães que já fizeram os exercícios</h3>
+      <p class="nota">Depoimentos reais de mães angolanas, publicados com autorização.</p>
+
+      <div class="voz">
+        <div class="quem">
+          <img data-src="media/maes/celina.webp" alt="Celina Manuel" loading="lazy" width="54" height="54">
+          <div><b>Celina Manuel</b><span>mãe de uma menina</span></div>
+        </div>
+        <p>Eu pensava que educar era só chamar atenção quando a criança fazia alguma
+          coisa errada. Com os exercícios, comecei a perceber a importância de brincar,
+          conversar e ensinar com paciência. A minha filha começou a partilhar mais,
+          a esperar pela sua vez e a ouvir melhor as orientações. Ainda estamos a
+          aprender, mas já noto mudanças positivas.</p>
+      </div>
+
+      <div class="voz">
+        <div class="quem">
+          <img data-src="media/maes/joana.webp" alt="Joana Vunge" loading="lazy" width="54" height="54">
+          <div><b>Joana Vunge</b><span>mãe de um menino</span></div>
+        </div>
+        <p>O meu filho tinha dificuldade em aceitar um não e, quando brincava com
+          outras crianças, às vezes não respeitava os limites delas. Começámos a fazer
+          os exercícios juntos, principalmente os de respeito, empatia e controlo das
+          emoções. Hoje, ele já consegue conversar melhor sobre aquilo que sente e está
+          a aprender a respeitar os outros. Foi uma experiência muito boa para nós.</p>
+      </div>
+
+      <div class="voz">
+        <div class="quem">
+          <img data-src="media/maes/maria.webp" alt="Maria Narciso" loading="lazy" width="54" height="54">
+          <div><b>Maria Narciso</b><span>mãe de um menino</span></div>
+        </div>
+        <p>Antes, o meu filho tinha muita dificuldade em ouvir quando eu lhe chamava
+          a atenção. Às vezes, qualquer coisa acabava numa discussão. Comecei a aplicar
+          os exercícios com ele, um bocadinho todos os dias. Aos poucos, fui percebendo
+          que estava mais disposto a conversar, a ouvir e a respeitar algumas regras em
+          casa. Gostei muito porque também aprendi a lidar melhor com ele.</p>
+      </div>
+    </div>
+
+
+    <div class="garantia">
+      <div class="selo">7<small>dias</small></div>
+      <div><b>Garantia de 7 dias</b>
+        <p>Experimente os livros com seu filho. Se não servir, peça o reembolso em até 7 dias
+          e devolvemos seu dinheiro, sem perguntas.</p></div>
+    </div>
+
+    <div class="autora">
+      <div class="top">
+        <img data-src="media/sara.webp" alt="Sara Ginga" width="76" height="76">
+        <div>
+          <b>Sara Ginga</b>
+          <span>Educadora · criadora do manual</span>
+        </div>
+      </div>
+      <p>Trabalho todos os dias com crianças em idade pré-escolar e com as mães
+        que me escrevem. Estes livros são o que eu uso — as brincadeiras que funcionam,
+        escritas para qualquer pai ou mãe conseguir fazer em casa.</p>
+      <a class="fb" href="https://www.facebook.com/profile.php?id=61596591507060"
+         target="_blank" rel="noopener">Ver a minha página no Facebook</a>
+    </div>
+
+
+    <h2 class="faqh">Perguntas frequentes</h2>
+    <details>
+      <summary>Meu filho tem 3 anos. Já serve?</summary>
+      <p>Sim. É para crianças de 2 a 6 anos. Com os menores, comece pelas brincadeiras do capítulo 1.</p>
+    </details>
+    <details>
+      <summary>É impresso ou digital?</summary>
+      <p>Digital, em PDF. Você pode ler no celular ou imprimir as folhas em casa ou na papelaria, em A4.</p>
+    </details>
+    <details>
+      <summary>Como recebo os 4 livros?</summary>
+      <p>Logo depois do pagamento chega no seu e-mail o link da sua página de acesso,
+        com os 4 livros prontos para baixar. Pode voltar lá quando quiser.</p>
+    </details>
+    <details>
+      <summary>Como pago?</summary>
+      <p>Pix (aprovação na hora) ou cartão de crédito, num checkout seguro.</p>
+    </details>
+    <details>
+      <summary>E se não servir para mim?</summary>
+      <p>Você tem 7 dias de garantia. Peça o reembolso e devolvemos seu dinheiro, sem discussão.</p>
+    </details>
+
+    <div class="fecho final">
+      <p class="ultimo">Daqui a 30 dias você pode ter um filho que divide, espera a vez e
+        fala o que sente. Comece hoje.</p>
+      <div class="oferta">
+          <span class="tag">BLACK FRIDAY · ATÉ 30/11</span>
+          <p class="price">Coleção completa · 4 livros em PDF
+            <s>R$ 97,60</s><b>R$ 29,90</b></p>
+          <span class="vital">∞ ACESSO VITALÍCIO</span>
+        </div>
+        <a class="cta" href="https://pay.cakto.com.br/gpvud7e_1335282">
+          QUERO OS 4 LIVROS
+          <small>∞ Acesso vitalício · chega na hora no seu e-mail</small>
+        </a>
+        <p class="under">Pix ou cartão · garantia de 7 dias</p>
+    </div>
+  </div>
+</section>
+
+<a class="barra" id="barra" href="https://pay.cakto.com.br/gpvud7e_1335282"><span><s>R$ 97,60</s> <b>R$ 29,90</b> · 4 livros</span><em>COMPRAR</em></a>
+
+<footer>
+  <div class="w">
+    Ferramenta educativa; não substitui acompanhamento profissional.<br>
+    Se o comportamento for frequente e persistente, procure um psicólogo infantil ou o pediatra.
+  </div>
+</footer>
+
+<script>
+(function(){
+  var v=document.getElementById('v'), cover=document.getElementById('cover'),
+      wait=document.getElementById('wait'), reveal=document.getElementById('reveal'),
+      mini=document.getElementById('mini'), sound=document.getElementById('sound'),
+      shown=false, KEY='vsl50-visto';
+
+  function abrir(){
+    if(shown) return; shown=true;
+    if(wait) wait.hidden=true; reveal.classList.add('on'); mini.hidden=false;
+    try{localStorage.setItem(KEY,'1')}catch(e){}
+    // as capas dos livros so entram depois da pagina pronta ou ao primeiro toque/scroll
+    var capas=function(){
+      mini.querySelectorAll('img[data-src]').forEach(function(im){
+        im.src = im.getAttribute('data-src'); im.removeAttribute('data-src');
+      });
+    };
+    ['touchstart','scroll'].forEach(function(ev){addEventListener(ev,capas,{once:true,passive:true})});
+    if('requestIdleCallback' in window) requestIdleCallback(capas,{timeout:4000}); else setTimeout(capas,3000);
+  }
+  // o botao so aparece com o video adiantado (1:50), para a pessoa chegar ao
+  // pagamento ja convencida. Quem ja viu antes nao espera outra vez.
+  // preco e botao de compra aparecem logo: ninguem espera pelo video
+  abrir();
+
+  cover.addEventListener('click',function(){
+    cover.style.display='none'; sound.style.display='none';
+    v.setAttribute('controls','');
+    v.play();
+    if(window.fbq) fbq('trackCustom','VideoPlay',{content_name:'VSL 50 Exercicios'});
+  });
+
+  // metade do video vista = sinal de interesse forte
+  var meio=false;
+  v.addEventListener('timeupdate',function(){
+    if(!meio && v.currentTime>=93){ meio=true;
+      if(window.fbq) fbq('trackCustom','VideoHalf',{content_name:'VSL 50 Exercicios'}); }
+  });
+
+  // clique em qualquer botao de compra
+  document.addEventListener('click',function(e){
+    var a=e.target.closest('a.cta, a.barra');
+    if(a && window.fbq){ fbq('trackCustom','ClicouComprar'); fbq('track','InitiateCheckout',{value:29.90,currency:'BRL'}); }
+  });
+
+  // revela ao 1:50, quando o video ja esta a mostrar o manual por dentro
+  v.addEventListener('timeupdate',function(){
+    if(v.currentTime>=110) abrir();
+  });
+  v.addEventListener('ended',abrir);
+
+  // barra fixa de compra: aparece quando o primeiro botao sai do ecra
+  var barra=document.getElementById('barra'), primeiro=document.querySelector('#reveal .cta');
+  if('IntersectionObserver' in window && primeiro){
+    new IntersectionObserver(function(es){ es.forEach(function(e){
+      barra.classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top<0);
+    }); }).observe(primeiro);
+  }
+
+  // rede de seguranca: 3 min na pagina revela na mesma
+  setTimeout(abrir,180000);
+})();
+</script>
+</body>
+</html>
