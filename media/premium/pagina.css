@@ -44,6 +44,7 @@ em { color: var(--amarelo); font-style: normal; }
 }
 .botao:hover { filter: brightness(1.09); }
 .botao.amarelo { color: var(--profundo); background: linear-gradient(#ffe760, #ffce17); box-shadow: 0 5px #ce920c, 0 10px 24px #57277f3b; text-transform: uppercase; }
+.hero .botao.amarelo { min-width: min(100%, 440px); }
 .amarelo span { display: grid; place-items: center; border-radius: 50%; width: 2em; height: 2em; background: var(--profundo); color: var(--amarelo); flex: none; }
 .botao.roxo { background: var(--gradiente); color: white; box-shadow: 0 4px 0 #391268, var(--sombra); }
 .micro { margin-top: 17px; font-size: .86rem; font-weight: 800; }
@@ -52,26 +53,25 @@ em { color: var(--amarelo); font-style: normal; }
 .hero::before, .hero::after { content: ''; position: absolute; z-index: -1; background: #caa6f080; width: 66%; height: 34%; bottom: -18%; border-radius: 48% 58% 0 0; }
 .hero::before { left: -16%; transform: rotate(14deg); }
 .hero::after { right: -16%; transform: rotate(-14deg); }
-.hero-inner { position: relative; padding: 24px 0 38px; }
+.hero-inner { position: relative; padding: 20px 0 29px; }
 .assinatura { display: inline-flex; gap: 10px; align-items: center; text-align: left; line-height: 1.2; }
 .assinatura img { width: 44px; height: 44px; border: 2px solid white; border-radius: 50%; }
 .assinatura strong, .assinatura small { display: block; }
 .assinatura small { font-size: .73rem; }
-.idade { display: table; margin: 15px auto 20px; padding: 6px 24px; border-radius: 999px; background: #e4c9fb; color: var(--profundo); text-transform: uppercase; font-size: .8rem; font-weight: 900; }
-.hero h1 { display: grid; justify-items: center; gap: .05em; font-size: clamp(2.45rem, 6.4vw, 6rem); color: var(--profundo); letter-spacing: -.035em; }
-.colecao { padding: .18em .65em; border-radius: 999px; background: var(--amarelo); font-size: .47em; letter-spacing: 0; transform: rotate(-3deg); }
-.valores { background: var(--gradiente); color: white; border-radius: .26em .36em .30em .38em; padding: .03em .32em .10em; transform: rotate(2deg); box-shadow: inset 0 -5px #35105f; }
-.subtitulo { max-width: 32ch; margin: 20px auto 0; font-size: clamp(1rem, 2.1vw, 1.35rem); font-weight: 850; }
-.hero-arte { width: min(100%, 880px); height: clamp(220px, 26vw, 345px); margin: 2px auto 12px; position: relative; }
-.crianca { position: absolute; left: 0; bottom: 19%; width: 31%; aspect-ratio: 151 / 222; background: url(hero-desktop.webp) 10% 43% / 430% auto; border-radius: 57% 46% 21% 19%; }
-.pilha { position: absolute; bottom: 12%; left: 22%; width: 59%; display: grid; grid-template-columns: repeat(4,1fr); align-items: end; gap: 1%; }
+.idade { display: table; margin: 12px auto 15px; padding: 6px 24px; border-radius: 999px; background: #e4c9fb; color: var(--profundo); text-transform: uppercase; font-size: .8rem; font-weight: 900; }
+.hero h1 { display: grid; justify-items: center; gap: .05em; font-size: clamp(2.1rem, 5vw, 4.25rem); color: var(--profundo); letter-spacing: -.035em; }
+.colecao { padding: .18em .65em; border-radius: 999px; background: var(--amarelo); font-size: .46em; letter-spacing: 0; }
+.valores { background: var(--gradiente); color: white; border-radius: .34em; padding: .02em .32em .08em; box-shadow: inset 0 -5px #35105f; }
+.subtitulo { position: relative; z-index: 1; max-width: min(48ch, 54%); margin: 15px auto 0; font-size: clamp(1rem, 1.55vw, 1.22rem); line-height: 1.23; font-weight: 850; }
+.subtitulo::after { content: ""; display: block; width: min(48%, 220px); margin: 12px auto 0; height: 5px; border-radius: 50%; background: var(--amarelo); }
+.hero-arte { width: min(100%, 1050px); height: clamp(175px, 21vw, 260px); margin: 8px auto 8px; position: relative; }
+.crianca { position: absolute; left: -1%; bottom: 23%; width: 27%; aspect-ratio: 151 / 214; background: url(hero-desktop.webp) 10% 41.4% / 430% auto no-repeat; border-radius: 54% 45% 23% 24%; }
+.pilha { position: absolute; bottom: 12%; left: 23%; width: 54%; display: grid; grid-template-columns: repeat(4,1fr); align-items: end; gap: 1%; }
 .pilha img { width: 100%; border-radius: 6px; filter: drop-shadow(0 8px 5px #35234e44); }
-.pilha img:first-child { transform: rotate(-5deg); }
-.pilha img:last-child { transform: rotate(5deg); }
 .livro-aberto, .blocos, .aviao { position: absolute; background-image: url(hero-desktop.webp); background-repeat: no-repeat; }
-.livro-aberto { bottom: 4%; left: 23%; width: 56%; aspect-ratio: 310 / 32; background-size: 210% auto; background-position: 51% 81%; border-radius: 42%; }
-.blocos { bottom: 2%; left: 5%; width: 14%; aspect-ratio: 81 / 60; background-size: 802% auto; background-position: 14% 82%; border-radius: 23%; }
-.aviao { bottom: 4%; right: 4%; width: 14%; aspect-ratio: 95 / 67; background-size: 685% auto; background-position: 87% 83%; border-radius: 27%; }
+.livro-aberto { bottom: 4%; left: 22%; width: 56%; aspect-ratio: 310 / 32; background-size: 210% auto; background-position: 51% 81%; border-radius: 42%; }
+.blocos { bottom: 2%; left: 7%; width: 12%; aspect-ratio: 81 / 60; background-size: 802% auto; background-position: 14% 82%; border-radius: 23%; }
+.aviao { bottom: 3%; right: 6%; width: 13%; aspect-ratio: 95 / 67; background-size: 685% auto; background-position: 87% 83%; border-radius: 27%; }
 
 .desafios, .livros { display: grid; grid-template-columns: repeat(4,minmax(0,1fr)); gap: clamp(16px, 2vw, 27px); }
 .desafio { --cor: #fbd9e8; background: var(--cor); border-radius: 23px; box-shadow: var(--sombra); overflow: hidden; }
@@ -160,7 +160,8 @@ details p { padding: 15px 18px; }
 @media (max-width: 650px) {
   .container { width: calc(100% - 36px); }
   .hero-inner { padding-top: 25px; }
-  .hero h1 { font-size: clamp(2rem, 9.3vw, 3.65rem); }
+  .hero h1 { font-size: clamp(1.9rem, 8.5vw, 3.3rem); }
+  .subtitulo { max-width: 34ch; padding-inline: 6px; }
   .hero-arte { height: auto; aspect-ratio: 1.15; margin-top: 16px; }
   .crianca { left: 22%; top: 0; bottom: auto; width: 56%; aspect-ratio: 177/148; background: url(hero-mobile.webp) 54% 51.4% / 245% auto; border-radius: 50% 50% 20% 20%; }
   .pilha { left: 13%; width: 74%; bottom: 16%; }
