@@ -54,10 +54,10 @@ em { color: var(--amarelo); font-style: normal; }
 .hero::before { left: -16%; transform: rotate(14deg); }
 .hero::after { right: -16%; transform: rotate(-14deg); }
 .hero-inner { position: relative; padding: 20px 0 29px; }
-.assinatura { display: inline-flex; gap: 10px; align-items: center; text-align: left; line-height: 1.2; }
+.assinatura { display: flex; flex-direction: column; gap: 6px; align-items: center; text-align: center; line-height: 1.2; }
 .assinatura img { width: 44px; height: 44px; border: 2px solid white; border-radius: 50%; }
 .assinatura strong, .assinatura small { display: block; }
-.assinatura small { font-size: .73rem; }
+.assinatura small { margin-top: 2px; font-size: .73rem; }
 .idade { display: table; margin: 12px auto 15px; padding: 6px 24px; border-radius: 999px; background: #e4c9fb; color: var(--profundo); text-transform: uppercase; font-size: .8rem; font-weight: 900; }
 .hero h1 { display: grid; justify-items: center; gap: .05em; font-size: clamp(2.1rem, 5vw, 4.25rem); color: var(--profundo); letter-spacing: -.035em; }
 .colecao { padding: .18em .65em; border-radius: 999px; background: var(--amarelo); font-size: .46em; letter-spacing: 0; }
