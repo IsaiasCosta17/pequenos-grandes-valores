@@ -159,10 +159,37 @@ details p { padding: 15px 18px; }
 }
 @media (max-width: 650px) {
   .container { width: calc(100% - 36px); }
-  .hero-inner { padding-top: 25px; }
+  .hero { background: radial-gradient(ellipse at 50% 36%, #fff9ff 14%, #f5e8fc 62%, #ead3fa); }
+  .hero::before, .hero::after { bottom: -15%; height: 22%; background: #d8b4f580; }
+  .hero-inner { padding: 24px 0 34px; }
+  .assinatura img { width: 50px; height: 50px; }
+  .assinatura strong { font-size: 1.08rem; }
+  .idade { margin-block: 14px 16px; }
+  .colecao { background: linear-gradient(#ffe967, #ffcb15); }
+  .valores { position: relative; background: linear-gradient(#a233de, #6312a4 58%, #3d137b); }
+  .valores::before, .valores::after {
+    content: '';
+    position: absolute;
+    top: 20%;
+    width: 17px;
+    height: 60%;
+    background:
+      linear-gradient(24deg, transparent 40%, #e92a83 43% 62%, transparent 65%) top / 100% 33%,
+      linear-gradient(#e92a83, #e92a83) center / 100% 3px,
+      linear-gradient(-24deg, transparent 40%, #e92a83 43% 62%, transparent 65%) bottom / 100% 33%;
+    background-repeat: no-repeat;
+  }
+  .valores::before { right: calc(100% + 8px); }
+  .valores::after { left: calc(100% + 8px); transform: scaleX(-1); }
   .hero h1 { font-size: clamp(1.9rem, 8.5vw, 3.3rem); }
-  .subtitulo { max-width: 34ch; padding-inline: 6px; }
-  .hero-arte { height: auto; aspect-ratio: 1.15; margin-top: 16px; }
+  .subtitulo { max-width: 38ch; padding-inline: 6px; }
+  .hero-arte { height: auto; aspect-ratio: 1.15; margin-top: 12px; isolation: isolate; }
+  .hero-arte::before, .hero-arte::after {
+    content: ''; position: absolute; z-index: -1; top: 19%; width: 60%; height: 63%;
+    background: linear-gradient(#e1c5f7c9, #ead2fa00); border-radius: 54% 58% 46% 38%;
+  }
+  .hero-arte::before { left: -23%; transform: rotate(27deg); }
+  .hero-arte::after { right: -23%; transform: rotate(-27deg); }
   .crianca { left: 22%; top: 0; bottom: auto; width: 56%; aspect-ratio: 177/148; background: url(hero-mobile.webp) 54% 51.4% / 245% auto; border-radius: 50% 50% 20% 20%; }
   .pilha { left: 13%; width: 74%; bottom: 16%; }
   .livro-aberto { left: 18%; width: 64%; bottom: 8%; }
