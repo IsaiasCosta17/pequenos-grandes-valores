@@ -19,3 +19,23 @@ document.addEventListener('click', (event) => {
   window.fbq?.('trackCustom', 'ClicouComprar');
   window.fbq?.('track', 'InitiateCheckout', { value: 29.90, currency: 'BRL' });
 });
+
+const visuais = new Map([
+  [video, () => { video.poster = video.dataset.poster; }],
+  ...Array.from(document.querySelectorAll('.desafios, .escudo'), (elemento) => [
+    elemento, () => elemento.classList.add('fotos-prontas'),
+  ]),
+]);
+
+if ('IntersectionObserver' in window) {
+  const observador = new IntersectionObserver((entradas) => {
+    for (const entrada of entradas) {
+      if (!entrada.isIntersecting) continue;
+      visuais.get(entrada.target)();
+      observador.unobserve(entrada.target);
+    }
+  }, { rootMargin: '180px' });
+  for (const elemento of visuais.keys()) observador.observe(elemento);
+} else {
+  for (const carregar of visuais.values()) carregar();
+}
