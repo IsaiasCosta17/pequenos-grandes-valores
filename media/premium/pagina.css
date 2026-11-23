@@ -91,6 +91,8 @@ em { color: var(--amarelo); font-style: normal; }
 .video-conteudo p { margin-top: 18px; font-size: clamp(1rem, 2vw, 1.29rem); max-width: 39ch; }
 
 .livros-fundo { padding-block: 64px; background: linear-gradient(180deg, #f8edff, #fffaf0); border-block: 5px solid #e6cffd; }
+.livros-acao { margin-top: clamp(26px, 4vw, 42px); text-align: center; }
+.livros-acao .botao { width: min(100%, 440px); }
 .livro { --livro-cor: #0878c2; --livro-fundo: #e5f5ff; display: flex; flex-direction: column; background: var(--livro-fundo); border-radius: 22px; padding: 12px 12px 20px; box-shadow: var(--sombra); }
 .livro:nth-child(2) { --livro-cor: #802cd4; --livro-fundo: #f3e5fc; }
 .livro:nth-child(3) { --livro-cor: #45903b; --livro-fundo: #ecf6dc; }
