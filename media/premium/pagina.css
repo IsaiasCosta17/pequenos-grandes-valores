@@ -197,7 +197,14 @@ details p { padding: 15px 18px; }
   .livro-aberto { left: 18%; width: 64%; bottom: 8%; aspect-ratio: 252/31; background: url(hero-mobile.webp) 52% 81.3% / 172% auto no-repeat; }
   .blocos { left: 1%; bottom: 6%; aspect-ratio: 70/59; background: url(hero-mobile.webp) 6% 81.5% / 619% auto no-repeat; }
   .aviao { right: 1%; bottom: 6%; aspect-ratio: 76/59; background: url(hero-mobile.webp) 97% 81.1% / 570% auto no-repeat; }
-  .botao.amarelo { width: 100%; padding-inline: 12px; font-size: .9rem; }
+  .botao {
+    max-width: 100%; min-height: 48px; padding: 9px 12px;
+    gap: .5em; line-height: 1.2; white-space: nowrap;
+  }
+  .botao.amarelo { width: 100%; font-size: clamp(.8rem, 3.5vw, .96rem); }
+  .botao.compra { font-size: clamp(.9rem, 4vw, 1.1rem); }
+  .bio .botao { font-size: clamp(.75rem, 3.5vw, 1rem); }
+  .bio .facebook { width: 30px; height: 30px; font-size: 21px; }
   .desafios { grid-template-columns: 1fr; gap: 20px; }
   .desafio { display: grid; align-items: center; grid-template-columns: minmax(0, .98fr) 1.02fr; }
   .desafio-foto { min-height: 118px; align-self: stretch; }
