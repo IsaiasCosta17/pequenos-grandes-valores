@@ -125,7 +125,7 @@ em { color: var(--amarelo); font-style: normal; }
 .bio h3 { margin-top: 18px; font-size: clamp(2rem, 3.5vw, 3rem); }
 .profissao { color: var(--profundo); font-weight: 900; margin-block: 8px 14px; }
 .bio a { margin-top: 22px; }
-.facebook { display: grid; place-items: center; background: #1767c7; color: white; border-radius: 50%; width: 24px; height: 24px; flex: none; }
+.facebook { display: grid; place-items: center; flex: none; width: 36px; height: 36px; border: 2px solid #fff; border-radius: 50%; background: #0866ff; color: #fff; font: 900 26px/1 Arial, sans-serif; }
 
 .faq { max-width: 900px; margin-inline: auto; border-bottom: 5px solid var(--amarelo); background: #fff8ed; }
 .faq header { padding: 34px 22px 42px; background: var(--gradiente); text-align: center; color: white; border-radius: 0 0 50% 50% / 0 0 12% 12%; border-bottom: 4px solid var(--amarelo); }
