@@ -47,7 +47,16 @@ em { color: var(--amarelo); font-style: normal; }
 .hero .botao.amarelo { min-width: min(100%, 440px); }
 .amarelo span { display: grid; place-items: center; border-radius: 50%; width: 2em; height: 2em; background: var(--profundo); color: var(--amarelo); flex: none; }
 .botao.roxo { background: var(--gradiente); color: white; box-shadow: 0 4px 0 #391268, var(--sombra); }
-.micro { margin-top: 17px; font-size: .86rem; font-weight: 800; }
+.preco-cta {
+  display: flex; justify-content: center; align-items: baseline; gap: .65em;
+  margin-top: 16px; color: var(--profundo); font-size: .94rem;
+ }
+.preco-cta s { font-weight: 700; color: #604a72; }
+.preco-cta strong {
+  padding: .12em .48em; border-radius: .55em; background: var(--amarelo);
+  font: 680 clamp(1.15rem, 4vw, 1.4rem)/1.2 Fredoka, sans-serif;
+ }
+.micro { margin-top: 6px; font-size: .86rem; font-weight: 800; }
 
 .hero { text-align: center; background: radial-gradient(ellipse at 50% 38%, #fff9ff 12%, #eddcff 72%, #dfbfff); isolation: isolate; position: relative; overflow: hidden; }
 .hero::before, .hero::after { content: ''; position: absolute; z-index: -1; background: #caa6f080; width: 66%; height: 34%; bottom: -18%; border-radius: 48% 58% 0 0; }
