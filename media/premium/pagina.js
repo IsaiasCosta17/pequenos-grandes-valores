@@ -17,7 +17,6 @@ video.addEventListener('timeupdate', () => {
 document.addEventListener('click', (event) => {
   if (!event.target.closest('[data-checkout]')) return;
   window.fbq?.('trackCustom', 'ClicouComprar');
-  window.fbq?.('track', 'InitiateCheckout', { value: 29.90, currency: 'BRL' });
 });
 
 const visuais = new Map([

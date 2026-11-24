@@ -15,7 +15,7 @@
 n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
 n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);
 fbq('init','1673794047709205');
-fbq('track','PageView');
+// PageView, InitiateCheckout e Purchase: pelo pixel da Utmify (24/11)
 fbq('track','ViewContent',{content_name:'Colecao 4 livros BR',
   content_ids:['colecao-4-br'],content_type:'product',value:29.90,currency:'BRL'});
 
@@ -36,11 +36,11 @@ fbq('track','ViewContent',{content_name:'Colecao 4 livros BR',
   else setTimeout(carregar,2500);
 })();
 </script>
-  <script src="media/premium/pagina.js?v=leve1" defer></script>
+  <script>window.pixelId="6b043f29e00782ed34cff8a1";var a=document.createElement("script");a.setAttribute("async","");a.setAttribute("defer","");a.setAttribute("src","https://cdn.utmify.com.br/scripts/pixel/pixel.js");document.head.appendChild(a);</script>
+  <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
+  <script src="media/premium/pagina.js?v=utmify1" defer></script>
 </head>
 <body>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1673794047709205&ev=PageView&noscript=1"></noscript>
 <main>
   <section class="hero" aria-labelledby="titulo">
     <div class="container hero-inner">
