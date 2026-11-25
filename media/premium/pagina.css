@@ -244,3 +244,16 @@ details p { padding: 15px 18px; }
 /* 25/11: pergunta do anúncio vencedor no topo */
 .gancho { position: relative; z-index: 1; margin: 14px auto 0; max-width: 22ch; font-family: Fredoka, "Nunito", sans-serif; font-size: clamp(1.45rem, 3.2vw, 2.2rem); line-height: 1.1; font-weight: 700; color: var(--profundo); text-align: center; }
 .gancho + .idade { margin-top: 10px; }
+
+/* 25/11: para quem é (todas as crianças, incl. TDAH e TEA) */
+.para-quem mark { background: none; color: var(--roxo); }
+.pq-intro { max-width: 46ch; margin: -18px auto 26px; text-align: center; font-size: 1.08rem; }
+.pq-lista { list-style: none; padding: 0; margin: 0 auto; max-width: 860px; display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.pq-lista li { position: relative; padding: 15px 16px 15px 52px; border-radius: 16px; background: #fff; box-shadow: 0 6px 18px #3d137b14; border: 1px solid #ecdffb; }
+.pq-lista li::before { content: ""; position: absolute; left: 16px; top: 17px; width: 24px; height: 24px; border-radius: 50%; background: var(--gradiente); }
+.pq-lista li::after { content: ""; position: absolute; left: 24px; top: 21px; width: 6px; height: 11px; border: solid #fff; border-width: 0 2.5px 2.5px 0; transform: rotate(45deg); }
+.pq-lista b { display: block; color: var(--profundo); font-size: 1.02rem; line-height: 1.25; }
+.pq-lista span { display: block; margin-top: 4px; font-size: .93rem; line-height: 1.4; color: #4e4560; }
+.pq-nota { max-width: 62ch; margin: 22px auto 0; padding: 12px 16px; border-radius: 12px; background: #f6effe; font-size: .86rem; line-height: 1.45; color: #5a4d6b; text-align: center; }
+.pq-acao { margin-top: 22px; text-align: center; }
+.pq-acao .botao { width: min(100%, 440px); }
