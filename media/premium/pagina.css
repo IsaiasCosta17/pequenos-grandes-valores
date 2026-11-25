@@ -240,3 +240,7 @@ details p { padding: 15px 18px; }
   .retrato img { width: min(70%, 235px); }
   .oferta-grade { gap: 20px; }
 }
+
+/* 25/11: pergunta do anúncio vencedor no topo */
+.gancho { position: relative; z-index: 1; margin: 14px auto 0; max-width: 22ch; font-family: Fredoka, "Nunito", sans-serif; font-size: clamp(1.45rem, 3.2vw, 2.2rem); line-height: 1.1; font-weight: 700; color: var(--profundo); text-align: center; }
+.gancho + .idade { margin-top: 10px; }
