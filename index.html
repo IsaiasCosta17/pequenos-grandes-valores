@@ -9,33 +9,7 @@
   <meta property="og:image" content="media/colecao/pack-4-livros-br.webp">
   <link rel="icon" href="media/sara-40.webp" type="image/webp">
   <link rel="stylesheet" href="media/premium/pagina.css?v=paraquem1">
-  <script>
-// stub do pixel: as chamadas ficam em fila e so disparam quando o fbevents.js chegar
-!function(f,b,e,v,n){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[]}(window,document);
-fbq('init','1673794047709205');
-// PageView, InitiateCheckout e Purchase: pelo pixel da Utmify (24/11)
-fbq('track','ViewContent',{content_name:'Colecao 4 livros BR',
-  content_ids:['colecao-4-br'],content_type:'product',value:29.90,currency:'BRL'});
-
-// o ficheiro de 96 KB da Meta so entra depois de a pagina estar pronta,
-// ou mal a pessoa toque/role - o que vier primeiro. Nenhum evento se perde.
-(function(){
-  var carregado=false;
-  function carregar(){
-    if(carregado)return; carregado=true;
-    var t=document.createElement('script'); t.async=true;
-    t.src='https://connect.facebook.net/en_US/fbevents.js';
-    document.head.appendChild(t);
-  }
-  ['touchstart','scroll','click','keydown'].forEach(function(ev){
-    addEventListener(ev,carregar,{once:true,passive:true});
-  });
-  if('requestIdleCallback'in window) requestIdleCallback(carregar,{timeout:3500});
-  else setTimeout(carregar,2500);
-})();
-</script>
+  <!-- Pixel Meta 1673794047709205: só pela Utmify (evita eventos a dobrar) -->
   <script>window.pixelId="6b043f29e00782ed34cff8a1";var a=document.createElement("script");a.setAttribute("async","");a.setAttribute("defer","");a.setAttribute("src","https://cdn.utmify.com.br/scripts/pixel/pixel.js");document.head.appendChild(a);</script>
   <script src="https://cdn.utmify.com.br/scripts/utms/latest.js" data-utmify-prevent-xcod-sck data-utmify-prevent-subids async defer></script>
   <script src="media/premium/pagina.js?v=utmify1" defer></script>
